@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@yield('title')</title>
+    @include('includes.style')
+
+    @stack('prepend-style')
+    @include('includes.style')
+    @stack('addon-style')
+</head>
+
+
+
+<body>
+    <!--navbar-->
+    @include('includes.navbar')
+
+    @yield('content')
+
+    <!--footer-->
+    @include('includes.footer')
+
+    @stack('prepend-script')
+    @include('includes.script')
+    <!-- xzoom-->
+    @stack('addon-script')
+
+</body>
+
+</html>
